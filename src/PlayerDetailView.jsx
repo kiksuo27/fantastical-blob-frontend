@@ -29,7 +29,7 @@ function PlayerDetailView() {
   }
 
   function fetchPlayer() {
-    fetch('${import.meta.env.VITE_API_URL}/users', {
+    fetch(`${import.meta.env.VITE_API_URL}/users`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((response) => response.json())

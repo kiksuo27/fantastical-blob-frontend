@@ -1,8 +1,22 @@
 import { NavLink } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 function PlayerSidebar({ logout }) {
+  const [collapsed, setCollapsed] = useState(false);
+
+  useEffect(() => {
+    document.body.classList.toggle('sidebar-is-collapsed', collapsed);
+  }, [collapsed]);
+
   return (
-    <div className="sidebar">
+    <div className={collapsed ? 'sidebar sidebar-collapsed' : 'sidebar'}>
+      <button
+        className="sidebar-toggle"
+        onClick={() => setCollapsed((prev) => !prev)}
+        aria-label="Toggle sidebar"
+      >
+        {collapsed ? '»' : '«'}
+      </button>
       <h2 className="sidebar-title">My Dashboard</h2>
       <nav>
         <NavLink

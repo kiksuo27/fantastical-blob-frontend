@@ -1,11 +1,25 @@
 import { NavLink} from 'react-router-dom';
 import { useAuth } from './AuthContext';
+import { useState, useEffect } from 'react';
 
 
 function Sidebar({ logout }) {
+    const [collapsed, setCollapsed] = useState(false);
+
+    useEffect(() => {
+        document.body.classList.toggle('sidebar-is-collapsed', collapsed);
+    }, [collapsed]);
+    
     const { currentUser } = useAuth();
     return (
-        <div className="sidebar">
+        <div className={collapsed ? 'sidebar sidebar-collapsed' : 'sidebar'}>
+            <button
+                className="sidebar-toggle"
+                onClick={() => setCollapsed((prev) => !prev)}
+                aria-label="Toggle sidebar"
+            >
+                {collapsed ? '»' : '«'}
+            </button>
             <h2 className="sidebar-title">Dashboard</h2>
             <nav>
                 <NavLink

@@ -285,6 +285,38 @@ body {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar-collapsed {
+  width: 64px;
+}
+
+.sidebar-collapsed .sidebar-title,
+.sidebar-collapsed nav {
+  display: none;
+}
+
+.sidebar-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  align-self: flex-end;
+  margin-bottom: 12px;
+  color: #6b7280;
+}
+
+body.sidebar-is-collapsed .main-content {
+  margin-left: 64px;
+}
+
+body.sidebar-is-collapsed .dashboard-top-bar {
+  margin-left: 64px;
 }
 
 .sidebar-title {
@@ -325,6 +357,7 @@ body {
   flex: 1;
   padding: 40px;
   overflow-y: auto;
+  margin-left: 220px;
 }
 
 .page-content .app-header {
@@ -484,6 +517,7 @@ body {
   padding: 24px 40px;
   background: rgb(255, 255, 255);
   border-bottom: 1px solid #e5e7eb;
+  margin-left: 220px;
 }
 
 .welcome-corner h1 {
