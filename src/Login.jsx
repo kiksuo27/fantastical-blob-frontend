@@ -38,8 +38,13 @@ function Login() {
   }
 
   return (
-    <div className="auth-box">
-      <h2>{mode === 'login' ? 'Log In' : 'Set Up Your Account'}</h2>
+      <div className="auth-box">
+        <img
+          src="/DevonshireAthletics.png"
+          alt="DevonshireAthletics"
+          style={{ display: 'block', margin: '0 auto 16px', maxWidth: '200px', height: 'auto' }}
+        />
+        <h2>{mode === 'login' ? 'Log In' : 'Set Up Your Account'}</h2>
 
       <form onSubmit={handleSubmit}>
         <input
