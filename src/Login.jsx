@@ -40,7 +40,7 @@ function Login() {
   return (
       <div className="auth-box">
         <img
-          src="/DevonshireAthletics.png"
+          src="/DevonshireAthletics1(1).png"
           alt="DevonshireAthletics"
           style={{ display: 'block', margin: '0 auto 16px', maxWidth: '200px', height: 'auto' }}
         />
